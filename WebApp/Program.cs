@@ -13,9 +13,9 @@ namespace WebApp
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
                 WebHost.CreateDefaultBuilder(args)
                        .UseStartup<Startup>();
-        
+
         /**
-         * TODO 8: Fix issue
+         * TODO 8: Fix issue -- implemented update, but only for cache
          * Users complains that sometimes, when they call AccountController.UpdateAccount followed by
          * AccountController.GetByInternalId they get account with counter equals 0, like if UpdateCounter was never
          * called.

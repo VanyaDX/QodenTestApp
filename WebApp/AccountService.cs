@@ -4,7 +4,7 @@ namespace WebApp
 {
     class AccountService : IAccountService
     {
-        // TODO 4: keep the cache up to date in accordance with DB (data about accounts in db and cache should be fully synced) 
+        // TODO 4: keep the cache up to date in accordance with DB (data about accounts in db and cache should be fully synced) -- didn't understand, should I use IMemoryCache?
         private readonly IAccountCache _cache;
         private readonly IAccountDatabase _db;
 
@@ -44,6 +44,11 @@ namespace WebApp
             }
 
             return account;
+        }
+
+        public void UpdateOrCreate(Account account)
+        {
+            _cache.AddOrUpdate(account);
         }
     }
 }
